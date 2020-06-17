@@ -2,7 +2,9 @@
 let newToDo;
 let toDoEntry;
 let newEntry;
-let currentHour = moment().format('h');
+let currentHour = moment().format('H');
+
+currentHour = parseInt(currentHour);
 
 //create a variable for current date
 let today = moment().format('dddd MMMM Do YYYY, h:mm a');
@@ -73,11 +75,20 @@ let events = [
 
 // for loop that everything runs off of
 for (i = 0; i < events.length; i++) {
+	//checking time and updating background color
+
 	let todo = events[i].todo;
 	let info = localStorage.getItem(todo);
 	let textBlock = events[i].content;
 	let saved = events[i].saved;
 	document.getElementById(textBlock).innerHTML = info;
+	if (events[i].time === currentHour) {
+		document.getElementById(textBlock).style.backgroundColor = 'red';
+	} else if (events[i].time < currentHour) {
+		document.getElementById(textBlock).style.backgroundColor = 'lightgray';
+	} else {
+		document.getElementById(textBlock).style.backgroundColor = 'aqua';
+	}
 
 	//start of events when you click on the space to insert new event
 	$('#' + textBlock).click(function() {
