@@ -80,6 +80,7 @@ for (i = 0; i < events.length; i++) {
 	let todo = events[i].todo;
 	let info = localStorage.getItem(todo);
 	let textBlock = events[i].content;
+	let checked = events[i].saved;
 	let saved = events[i].saved;
 	document.getElementById(textBlock).innerHTML = info;
 	if (events[i].time === currentHour) {
@@ -100,5 +101,6 @@ for (i = 0; i < events.length; i++) {
 	//saves to local storage when you click on save
 	$('#' + saved).click(function() {
 		window.localStorage.setItem(todo, newToDo);
+		document.getElementById(checked).innerHTML = '<img src="Assets/checkmark.png" width="30px" height="30px">';
 	});
 }
