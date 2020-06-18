@@ -76,7 +76,6 @@ let events = [
 // for loop that everything runs off of
 for (i = 0; i < events.length; i++) {
 	//checking time and updating background color
-
 	let todo = events[i].todo;
 	let info = localStorage.getItem(todo);
 	let textBlock = events[i].content;
@@ -91,16 +90,9 @@ for (i = 0; i < events.length; i++) {
 		document.getElementById(textBlock).style.backgroundColor = 'aqua';
 	}
 
-	//start of events when you click on the space to insert new event
-	$('#' + textBlock).click(function() {
-		newToDo = prompt('Please enter your new event here.');
-		toDoEntry = $('#' + textBlock);
-		newEntry = $(`<div>` + newToDo + `</div>`);
-		toDoEntry.html(newEntry);
-	});
 	//saves to local storage when you click on save
 	$('#' + saved).click(function() {
-		window.localStorage.setItem(todo, newToDo);
+		window.localStorage.setItem(todo, document.getElementById(textBlock).value);
 		document.getElementById(checked).innerHTML = '<img src="Assets/checkmark.png" width="30px" height="30px">';
 	});
 }
