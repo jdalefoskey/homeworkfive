@@ -4,8 +4,8 @@
 ## Description
 This project is my 5th project deployed while taking the Web Developer Bootcamp at UNC.  It provides a fun approach at learning javascript by creating a day planner that allows you to put in new entries, save entries, it also highlights the timeslots by color based on current time you open it . All of this was created with HTML, CSS, Javascript, Jquery, Bootstrap only.
 
-![screenshot 1](Assets/screen1.png)
-![screenshot 2](Assets/screen2.png)
+![screenshot 1](Assets/screenshot1.png)
+![screenshot 2](Assets/screenshot2.png)
 
 
 
